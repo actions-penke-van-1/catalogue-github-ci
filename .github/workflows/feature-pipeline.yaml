@@ -7,7 +7,16 @@ permissions:
   security-events: read
 jobs:
   feature-pipeline:
+    if : github.ref != 'refs/heads/main' 
     uses: actions-penke-van-1/reusable-workflows/.github/workflows/feature-nodejs-pipeline.yaml@main
+    with:
+      project: roboshop
+      component: catalogue
+      environment: dev
+    secrets: inherit  
+  dev-pipeline:
+    if : github.ref == 'refs/heads/main' 
+    uses: actions-penke-van-1/reusable-workflows/.github/workflows/dev-nodejs-pipeline.yaml@main
     with:
       project: roboshop
       component: catalogue
