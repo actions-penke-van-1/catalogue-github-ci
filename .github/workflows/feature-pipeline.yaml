@@ -1,9 +1,10 @@
 name: feature-pipeline-catalogue-caller
 on: [push]
-# #giving permission for curl to call githubapi to make chnages to the repo's commit's status
-# permissions:
-#   content: read
-#   statuses: write
+#giving permission for curl to call githubapi to make chnages to the repo's commit's status
+permissions:
+  contents: read
+  statuses: write
+  security-events: read
 jobs:
   feature-pipeline:
     uses: actions-penke-van-1/reusable-workflows/.github/workflows/feature-nodejs-pipeline.yaml@main
