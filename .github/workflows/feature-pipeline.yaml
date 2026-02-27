@@ -1,6 +1,6 @@
 name: feature-pipeline-catalogue-caller
 on: [push]
-#giving permission for curl to call githubapi to make chnages to the repo's commit's status--
+#giving - permission for curl to call githubapi to make chnages to the repo's commit's status--
 permissions:
   contents: read
   statuses: write
